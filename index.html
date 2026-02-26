@@ -268,6 +268,46 @@
       margin-bottom: 18px;
     }
 
+    /* Form */
+    .form-group {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
     .btn {
       display: inline-block;
       background: linear-gradient(135deg, var(--accent), var(--accent-light));
@@ -437,9 +477,52 @@
             <span class="icon">💬</span> Contact Us
           </h2>
           <p>Bug reports, feature requests, or general feedback — we'd love to hear from you.</p>
-          <a href="/cdn-cgi/l/email-protection#acdfd9dcdcc3ded8ecc9d4cdc1dcc0c982cfc3c1" class="btn">Send an Email</a>
+
+          <div class="form-group">
+            <label for="issue-type">Type</label>
+            <select id="issue-type">
+              <option value="bug">🐛 Bug Report</option>
+              <option value="feature">✨ Feature Request</option>
+              <option value="question">❓ Question</option>
+              <option value="other">💬 Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="issue-title">Title</label>
+            <input type="text" id="issue-title" placeholder="Brief summary of your issue">
+          </div>
+
+          <div class="form-group">
+            <label for="issue-body">Details</label>
+            <textarea id="issue-body" rows="5" placeholder="Describe what happened, what you expected, or what you'd like to see..."></textarea>
+          </div>
+
+          <button class="btn" onclick="submitIssue()">Submit on GitHub</button>
         </div>
       </section>
+
+      <script>
+        function submitIssue() {
+          var type = document.getElementById('issue-type');
+          var title = document.getElementById('issue-title');
+          var body = document.getElementById('issue-body');
+
+          var labels = { bug: 'bug', feature: 'enhancement', question: 'question', other: '' };
+          var prefix = { bug: '[Bug] ', feature: '[Feature] ', question: '[Question] ', other: '' };
+
+          var issueTitle = prefix[type.value] + title.value;
+          var params = new URLSearchParams({ title: issueTitle, body: body.value });
+
+          var label = labels[type.value];
+          if (label) params.append('labels', label);
+
+          window.open(
+            'https://github.com/Tomoki-Taguchi/clipbit-support/issues/new?' + params.toString(),
+            '_blank'
+          );
+        }
+      </script>
 
     </main>
 
