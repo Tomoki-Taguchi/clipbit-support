@@ -266,6 +266,28 @@
     a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
     a:hover { opacity: 0.8; }
 
+    .privacy-link {
+      display: inline-block;
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-muted);
+      padding: 12px 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
+    }
+
+    .privacy-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(74,142,255,0.1);
+      color: var(--accent);
+      opacity: 1;
+    }
+
     .btn {
       display: inline-block;
       background: linear-gradient(135deg, var(--accent), var(--accent-light));
@@ -393,9 +415,8 @@
     </section>
 
     <!-- ═══ PRIVACY ═══ -->
-    <section class="reveal">
-      <h2><span class="icon">🛡️</span> Privacy Policy</h2>
-      <p>Clipbit does not collect any personal information. All data, including your clipboard contents, is stored exclusively on your device and is never transmitted externally. We do not use any analytics or tracking tools.</p>
+    <section class="reveal" style="text-align:center;">
+      <a href="privacy.html" class="privacy-link">🛡️ Privacy Policy</a>
     </section>
 
     <!-- ═══ CONTACT ═══ -->
@@ -405,7 +426,7 @@
           <span class="icon">💬</span> Contact Us
         </h2>
         <p>Bug reports, feature requests, or general feedback — we'd love to hear from you.</p>
-        <a href="mailto:clipbit.app@gmail.com?subject=Clipbit%20Support" class="btn">Send an Email</a>
+        <a href="/cdn-cgi/l/email-protection#6b0807021b09021f450a1b1b2b0c060a02074508040654181e09010e081f562807021b09021f4e595b381e1b1b04191f" class="btn">Send an Email</a>
       </div>
     </section>
 
@@ -414,13 +435,7 @@
     </footer>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
-
-</body>
-</html>
+      entries.forEach(e => { if (e.isIntersectin
