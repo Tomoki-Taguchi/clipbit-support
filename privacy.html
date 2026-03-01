@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clipbit — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f0f5fc;
+      --surface: #ffffff;
+      --surface-glass: rgba(255,255,255,0.55);
+      --border: #d0ddef;
+      --border-glass: rgba(255,255,255,0.6);
+      --text: #1a2740;
+      --text-muted: #5a6f8a;
+      --accent: #4a8eff;
+      --accent-soft: rgba(74,142,255,0.1);
+      --radius: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: linear-gradient(180deg, #dce8fb 0%, #c5d8f5 30%, #d5e3f7 60%, #e8eff9 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 28px 40px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: opacity 0.2s;
+    }
+
+    .back:hover { opacity: 0.7; }
+
+    .card {
+      background: var(--surface-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: 0 8px 32px rgba(74,142,255,0.06);
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .updated {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 24px 0 10px;
+      color: var(--text);
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 32px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 520px) {
+      .container { padding: 40px 20px 32px; }
+      .card { padding: 28px 22px; }
+      h1 { font-size: 1.4rem; }
+    }
+
+    .lang-toggle {
+      position: fixed; top: 20px; right: 20px; z-index: 100;
+      display: flex; align-items: center;
+      background: var(--surface-glass);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(0,0,0,0.06); border-radius: 50px;
+      padding: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 600;
+    }
+    .lang-toggle button {
+      background: none; border: none; cursor: pointer;
+      padding: 7px 14px; border-radius: 50px;
+      color: var(--text-muted); font-family: inherit; font-size: inherit; font-weight: inherit;
+      transition: all 0.25s ease;
+    }
+    .lang-toggle button.active {
+      background: var(--accent); color: #fff;
+      box-shadow: 0 2px 8px rgba(74,142,255,0.2);
+    }
+    .lang-toggle button:not(.active):hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <div class="lang-toggle">
+    <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+    <button id="btn-ja" onclick="switchLang('ja')">JA</button>
+  </div>
+
+  <div class="container">
+    <a href="index.html" class="back" data-i18n="back">&larr; Back to Clipbit</a>
+
+    <div class="card">
+      <h1 data-i18n="title">🛡️ Privacy Policy</h1>
+      <p class="updated" data-i18n="updated">Last updated: February 2026</p>
+
+      <h2 data-i18n="h-overview">Overview</h2>
+      <p data-i18n="p-overview">Clipbit ("the App") is a clipboard manager for macOS developed by Tomoki Taguchi. Your privacy is important to us. This policy explains what data the App collects and how it is handled.</p>
+
+      <h2 data-i18n="h-collection">Data Collection</h2>
+      <p data-i18n="p-collection">Clipbit does not collect, store, or transmit any personal information. The App operates entirely on your local device.</p>
+
+      <h2 data-i18n="h-clipboard">Clipboard Data</h2>
+      <p data-i18n="p-clipboard">Clipboard history managed by Clipbit is stored exclusively on your Mac. No clipboard contents are ever sent to external servers, cloud services, or third parties.</p>
+
+      <h2 data-i18n="h-analytics">Analytics &amp; Tracking</h2>
+      <p data-i18n="p-analytics">Clipbit does not use any analytics tools, advertising SDKs, or tracking technologies. We do not track your usage, behavior, or any other activity.</p>
+
+      <h2 data-i18n="h-third">Third-Party Services</h2>
+      <p data-i18n="p-third">Clipbit does not integrate with any third-party services that collect user data.</p>
+
+      <h2 data-i18n="h-changes">Changes to This Policy</h2>
+      <p data-i18n="p-changes">We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date.</p>
+
+      <h2 data-i18n="h-contact">Contact</h2>
+      <p data-i18n-html="p-contact">If you have any questions about this Privacy Policy, please contact us at <a href="mailto:clipbit.app@gmail.com" style="color: #4a8eff;">clipbit.app@gmail.com</a>.</p>
+    </div>
+
+    <footer data-i18n-html="footer">&copy; 2026 Clipbit. All rights reserved.</footer>
+  </div>
+
+  <script>
+    var i18n = {
+      en: {
+        'back': '\u2190 Back to Clipbit',
+        'title': '\uD83D\uDEE1\uFE0F Privacy Policy',
+        'updated': 'Last updated: February 2026',
+        'h-overview': 'Overview',
+        'p-overview': 'Clipbit ("the App") is a clipboard manager for macOS developed by Tomoki Taguchi. Your privacy is important to us. This policy explains what data the App collects and how it is handled.',
+        'h-collection': 'Data Collection',
+        'p-collection': 'Clipbit does not collect, store, or transmit any personal information. The App operates entirely on your local device.',
+        'h-clipboard': 'Clipboard Data',
+        'p-clipboard': 'Clipboard history managed by Clipbit is stored exclusively on your Mac. No clipboard contents are ever sent to external servers, cloud services, or third parties.',
+        'h-analytics': 'Analytics & Tracking',
+        'p-analytics': 'Clipbit does not use any analytics tools, advertising SDKs, or tracking technologies. We do not track your usage, behavior, or any other activity.',
+        'h-third': 'Third-Party Services',
+        'p-third': 'Clipbit does not integrate with any third-party services that collect user data.',
+        'h-changes': 'Changes to This Policy',
+        'p-changes': 'We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated revision date.',
+        'h-contact': 'Contact',
+        'p-contact': 'If you have any questions about this Privacy Policy, please contact us at <a href="mailto:clipbit.app@gmail.com" style="color: #4a8eff;">clipbit.app@gmail.com</a>.',
+        'footer': '&copy; 2026 Clipbit. All rights reserved.'
+      },
+      ja: {
+        'back': '\u2190 Clipbitに戻る',
+        'title': '\uD83D\uDEE1\uFE0F プライバシーポリシー',
+        'updated': '最終更新日: 2026年2月',
+        'h-overview': '概要',
+        'p-overview': 'Clipbit（以下「本アプリ」）は、田口智貴が開発したmacOS用クリップボードマネージャーです。ユーザーのプライバシーを大切にしています。本ポリシーでは、本アプリが収集するデータとその取り扱いについて説明します。',
+        'h-collection': 'データの収集',
+        'p-collection': 'Clipbitは個人情報を収集、保存、送信しません。本アプリは完全にお使いのデバイス上で動作します。',
+        'h-clipboard': 'クリップボードデータ',
+        'p-clipboard': 'Clipbitが管理するクリップボード履歴は、お使いのMac上にのみ保存されます。クリップボードの内容が外部サーバー、クラウドサービス、または第三者に送信されることは一切ありません。',
+        'h-analytics': 'アナリティクスとトラッキング',
+        'p-analytics': 'Clipbitは分析ツール、広告SDK、トラッキング技術を一切使用していません。利用状況、行動、その他の活動を追跡することはありません。',
+        'h-third': 'サードパーティサービス',
+        'p-third': 'Clipbitはユーザーデータを収集するサードパーティサービスとの連携を一切行っていません。',
+        'h-changes': '本ポリシーの変更',
+        'p-changes': '本プライバシーポリシーは随時更新される場合があります。変更があった場合は、更新日とともにこのページに反映されます。',
+        'h-contact': 'お問い合わせ',
+        'p-contact': '本プライバシーポリシーに関するご質問は、<a href="mailto:clipbit.app@gmail.com" style="color: #4a8eff;">clipbit.app@gmail.com</a> までお問い合わせください。',
+        'footer': '&copy; 2026 Clipbit. All rights reserved.'
+      }
+    };
+
+    var currentLang = localStorage.getItem('clipbit-lang') || 'en';
+    function switchLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('clipbit-lang', lang);
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+      document.documentElement.lang = lang;
+      var data = i18n[lang];
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (data[key]) el.textContent = data[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (data[key]) el.innerHTML = data[key];
+      });
+    }
+    switchLang(currentLang);
+  </script>
+
+</body>
+</html>
